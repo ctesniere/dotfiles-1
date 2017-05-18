@@ -1,8 +1,45 @@
 #!/usr/bin/env bash
 
+git pull origin master;
+
+# Pre check
+check_software_exist() {
+	softwares=("atom" "git")
+	for sw in "${softwares[@]}"
+	do
+		# Notice the semicolon
+		type ${sw} > /dev/null 2>&1 ||
+			{ echo >&2 "ERROR: **${sw}** is not installed!"; exit 1; }
+	done
+}
+
+install_or_update_nvm() {
+	curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+	cd ~/.nvm
+	LAST_TAG=`git describe --abbrev=0 --tags`
+	git checkout $LAST_TAG
+	cd -
+}
+
+create_symlinks() {
+	dotfiles=(".bashrc" ".gitconfig" ".gitignore" ".hgignore")
+	for dotfile in "${dotfiles[@]}"
+	do
+		ln -sfv ${PWD}/${dotfile} ${HOME}/${dotfile}
+	done
+}
+
+main() {
+	check_software_exist
+	bash ./.atom/_init.sh
+	install_or_update_nvm
+	create_symlinks
+}
+
+main
+exit
 cd "$(dirname "${BASH_SOURCE}")";
 
-git pull origin master;
 
 function doIt() {
 	rsync --exclude ".git/" \
