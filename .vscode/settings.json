@@ -1,0 +1,7 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "workbench.iconTheme": "vs-seti",
+    "files.autoSave": "afterDelay",
+    "window.zoomLevel": 0,
+    "workbench.welcome.enabled": true
+}
