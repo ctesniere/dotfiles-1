@@ -1,0 +1,218 @@
+"*":
+  Zen:
+    minimap: true
+    softWrap: true
+  "atom-beautify":
+    apex:
+      disabled: true
+    arduino:
+      disabled: true
+    bash:
+      beautify_on_save: true
+      disabled: true
+    c:
+      disabled: true
+    cfml:
+      disabled: true
+    clj:
+      disabled: true
+    coffeescript: {}
+    cpp:
+      disabled: true
+    crystal:
+      disabled: true
+    cs:
+      disabled: true
+    css:
+      disabled: true
+    csv:
+      disabled: true
+    d:
+      disabled: true
+    ejs:
+      disabled: true
+    elm:
+      disabled: true
+    erb:
+      disabled: true
+    erlang:
+      disabled: true
+    fortran:
+      disabled: true
+    general:
+      analytics: false
+    gherkin:
+      disabled: true
+    glsl:
+      disabled: true
+    go:
+      disabled: true
+    handlebars:
+      disabled: true
+    haskell:
+      disabled: true
+    java:
+      disabled: true
+    js:
+      brace_style: "collapse-preserve-inline"
+      break_chained_methods: true
+      end_with_comma: true
+      end_with_newline: true
+      indent_char: "0"
+      indent_size: 2
+      keep_function_indentation: true
+      preserve_newlines: false
+      space_before_conditional: false
+    jsx:
+      disabled: true
+    latex:
+      disabled: true
+    lua:
+      disabled: true
+    marko:
+      disabled: true
+    mustache:
+      disabled: true
+    nunjucks:
+      disabled: true
+    objectivec:
+      disabled: true
+    ocaml:
+      disabled: true
+    pawn:
+      disabled: true
+    perl:
+      disabled: true
+    php:
+      disabled: true
+    puppet:
+      disabled: true
+    python:
+      disabled: true
+    r:
+      disabled: true
+    riot:
+      disabled: true
+    ruby:
+      disabled: true
+    rust:
+      disabled: true
+    sass:
+      disabled: true
+    scss:
+      disabled: true
+    spacebars:
+      disabled: true
+    svg:
+      disabled: true
+    swig:
+      disabled: true
+    tss:
+      disabled: true
+    twig:
+      disabled: true
+    typescript: {}
+    ux:
+      disabled: true
+    vala:
+      disabled: true
+    visualforce:
+      disabled: true
+    vue:
+      disabled: true
+    xml:
+      disabled: true
+    xtemplate:
+      disabled: true
+  "atom-material-ui":
+    colors:
+      abaseColor: "#030a0a"
+  "auto-detect-indentation": {}
+  autosave:
+    enabled: true
+  core:
+    allowPendingPaneItems: false
+    disabledPackages: [
+      "language-c"
+      "language-clojure"
+      "language-csharp"
+      "language-gfm"
+      "language-go"
+      "language-java"
+      "language-hyperlink"
+      "language-make"
+      "language-objective-c"
+      "language-perl"
+      "language-php"
+      "language-property-list"
+      "language-ruby"
+      "language-ruby-on-rails"
+      "language-sass"
+      "language-source"
+      "language-text"
+      "language-todo"
+      "language-toml"
+      "link"
+      "spell-check"
+      "open-on-github"
+    ]
+    packagesWithKeymapsDisabled: [
+      "git-blame"
+      "git-diff"
+    ]
+    telemetryConsent: "no"
+    themes: [
+      "atom-dark-ui"
+      "base16-tomorrow-dark-theme"
+    ]
+  editor:
+    fontSize: 13
+    invisibles: {}
+    preferredLineLength: 160
+    scrollPastEnd: true
+  esformatter:
+    formatOnSave: true
+  "exception-reporting":
+    userId: "8830c2a1-cca5-4271-aadb-5e6142af9b29"
+  "fuzzy-finder":
+    preserveLastSearch: true
+  "git-blame":
+    customCommitUrlTemplateString: "git show <%- revision %>"
+  "git-diff": {}
+  "git-diff-details":
+    enableSyntaxHighlighting: true
+  hyperclick:
+    linuxTriggerKeys: "ctrlKey,altKey"
+  linter: {}
+  "linter-eslint": {}
+  "linter-ui-default":
+    panelHeight: 49
+    showPanel: true
+    showTooltip: false
+  "markdown-preview":
+    useGitHubStyle: true
+  minimap:
+    plugins:
+      "git-diff": true
+      "git-diffDecorationsZIndex": 0
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+  "minimap-git-diff": {}
+  "nord-atom-ui": {}
+  "one-dark-ui": {}
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+    syncHorizontalScroll: true
+  "tree-view":
+    alwaysOpenExisting: true
+    squashDirectoryNames: true
+  "tree-view-git-status": {}
+  welcome:
+    showOnStartup: false
+".source.ts":
+  editor:
+    showIndentGuide: true
+    showInvisibles: true
