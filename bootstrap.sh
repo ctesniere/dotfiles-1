@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+git stash --include-untracked;
+git checkout master;
 git pull origin master;
 
 # Pre check
@@ -22,7 +24,7 @@ install_or_update_nvm() {
 }
 
 create_symlinks() {
-	dotfiles=(".bashrc" ".gitconfig" ".gitignore" ".hgignore")
+	dotfiles=(".gitconfig" ".gitignore" ".hgignore")
 	for dotfile in "${dotfiles[@]}"
 	do
 		ln -sfv ${PWD}/${dotfile} ${HOME}/${dotfile}
@@ -31,12 +33,14 @@ create_symlinks() {
 
 main() {
 	check_software_exist
-	bash ./.atom/_init.sh
+	./.atom/bootstrap.sh
+	./.vscode/bootstrap.sh
 	install_or_update_nvm
 	create_symlinks
 }
 
 main
+git stash pop stash@\{0\}
 exit
 cd "$(dirname "${BASH_SOURCE}")";
 
