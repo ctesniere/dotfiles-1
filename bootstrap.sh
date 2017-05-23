@@ -1,8 +1,16 @@
 #!/usr/bin/env bash
 
-git stash --include-untracked;
+## Exit if execute on Windows
+if [ "$(expr substr $(uname -s) 1 5)" == "MINGW" ]; then
+    echo "ERROR: This script doesn't work on Windows'"
+	exit
+fi
+
+
 git checkout master;
 git pull origin master;
+
+
 
 # Pre check
 check_software_exist() {
