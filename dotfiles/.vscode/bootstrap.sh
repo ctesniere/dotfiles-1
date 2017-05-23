@@ -1,19 +1,21 @@
 #!/usr/bin/env bash
 
-type code > /dev/null 2>&1 || { echo >&2 "ERROR: **code (vscode)** is not installed!"; exit 1; }
-
+check_software_exist code
 
 PATH_FILE=`pwd`/`dirname $0`
 
-
 if [ "$(uname)" == "Darwin" ]; then
-	ln -sfv ${PATH_FILE}/settings.json ~/Library/Application Support/Code/User/settings.json
+	PATH_CONFIG="${HOME}/Library/Application Support/Code/User"
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-	ln -sfv ${PATH_FILE}/settings.json ~/.config/Code/User/settings.json
+	PATH_CONFIG="${HOME}/.config/Code/User"
 fi
 
-# Packages
+mkdir -p ${PATH_CONFIG}
+rm -fr "${PATH_CONFIG}/snippets" && ln -sfv "${PATH_FILE}/snippets/" "${PATH_CONFIG}/"
+ln -sfv "${PATH_FILE}/settings.json" "${PATH_CONFIG}/settings.json"
+ln -sfv "${PATH_FILE}/keybindings.json" "${PATH_CONFIG}/keybindings.json"
 
+# Packages
 code --install-extension DavidAnson.vscode-markdownlint
 code --install-extension HookyQR.beautify
 code --install-extension dbaeumer.vscode-eslint

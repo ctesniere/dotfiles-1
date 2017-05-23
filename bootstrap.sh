@@ -1,28 +1,20 @@
 #!/usr/bin/env bash
 
+. mixins.sh
+
+
 ## Exit if execute on Windows
 if [ "$(expr substr $(uname -s) 1 5)" == "MINGW" ]; then
-    echo "ERROR: This script doesn't work on Windows'"
+    output_error "ERROR: This script doesn't work on Windows"
 	exit
 fi
 
 
-git checkout master;
-git pull origin master;
-
+#git checkout master;
+#git pull origin master;
 
 
 # Pre check
-check_software_exist() {
-	softwares=("atom" "git")
-	for sw in "${softwares[@]}"
-	do
-		# Notice the semicolon
-		type ${sw} > /dev/null 2>&1 ||
-			{ echo >&2 "ERROR: **${sw}** is not installed!"; exit 1; }
-	done
-}
-
 install_or_update_nvm() {
 	curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 	cd ~/.nvm
@@ -35,21 +27,26 @@ create_symlinks() {
 	dotfiles=(".gitconfig" ".gitignore" ".hgignore")
 	for dotfile in "${dotfiles[@]}"
 	do
-		ln -sfv ${PWD}/${dotfile} ${HOME}/${dotfile}
+		ln -sfv ${PWD}/dotfiles/${dotfile} ${HOME}/${dotfile}
 	done
 }
 
 main() {
-	check_software_exist
-	./.atom/bootstrap.sh
-	./.vscode/bootstrap.sh
-	install_or_update_nvm
+	./dotfiles/.atom/bootstrap.sh
+	./dotfiles/.vscode/bootstrap.sh
 	create_symlinks
+	#install_or_update_nvm
 }
 
 main
-git stash pop stash@\{0\}
+
+git stash pop stash@\{0\} --quiet
+
 exit
+
+
+#################
+
 cd "$(dirname "${BASH_SOURCE}")";
 
 

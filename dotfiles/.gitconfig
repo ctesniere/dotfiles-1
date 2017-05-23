@@ -56,7 +56,7 @@
 
 [credential]
 
-	helper = osxkeychain
+	helper = store
 
 [rerere]
 
