@@ -110,7 +110,7 @@
 	remotes = remote -v
 
 	# Amend the currently staged files to the latest commit
-	amend = commit --amend --reuse-message=HEAD
+	amend = commit --amend
 
 	# Rewriting history
 	fixup = "!sh -c 'COMMIT=$(git rev-parse $1) && git commit --fixup=$COMMIT && git rebase -i --autostash --autosquash $COMMIT~1' -"
@@ -244,4 +244,4 @@
 
 [includeIf "gitdir:~/workspace/"]
 
-	path = ~/workspace/.gitconfig-workspace
+	path = .gitconfig-workspace

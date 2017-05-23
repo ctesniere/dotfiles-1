@@ -1,20 +1,18 @@
 #!/usr/bin/env bash
 
+type code > /dev/null 2>&1 || { echo >&2 "ERROR: **code (vscode)** is not installed!"; exit 1; }
+
+
 PATH_FILE=`pwd`/`dirname $0`
+
 
 if [ "$(uname)" == "Darwin" ]; then
 	ln -sfv ${PATH_FILE}/settings.json ~/Library/Application Support/Code/User/settings.json
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 	ln -sfv ${PATH_FILE}/settings.json ~/.config/Code/User/settings.json
-elif [ "$(expr substr $(uname -s) 1 5)" == "MINGW" ]; then
-    echo "ERROR: This script doesn't work on Windows'"
-	exit
 fi
 
 # Packages
-
-type code > /dev/null 2>&1 ||
-	{ echo >&2 "ERROR: **code (vscode)** is not installed!"; exit 1; }
 
 code --install-extension DavidAnson.vscode-markdownlint
 code --install-extension HookyQR.beautify

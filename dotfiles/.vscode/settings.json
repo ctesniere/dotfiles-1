@@ -3,5 +3,6 @@
     "workbench.iconTheme": "vs-seti",
     "files.autoSave": "afterDelay",
     "window.zoomLevel": 0,
-    "workbench.welcome.enabled": true
+    "workbench.welcome.enabled": true,
+    "vsicons.projectDetection.autoReload": true
 }
